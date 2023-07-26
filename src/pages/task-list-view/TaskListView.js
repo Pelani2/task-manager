@@ -27,6 +27,12 @@ export default function TaskListView() {
         setNewTaskTitle("");
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            handleAddTask();
+        }
+    };
+
     const handleDeleteAllTasks = () => {
         setTasks([]);
     };
@@ -41,6 +47,7 @@ export default function TaskListView() {
                     type="text"
                     value={newTaskTitle}
                     onChange={(e) => setNewTaskTitle(e.target.value)}
+                    onKeyPress={handleKeyPress}
                 />
                 <button onClick={handleAddTask}>
                     Create Task
