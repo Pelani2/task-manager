@@ -27,6 +27,10 @@ export default function TaskListView() {
         setNewTaskTitle("");
     };
 
+    const handleDeleteAllTasks = () => {
+        setTasks([]);
+    };
+
     return(
         <div>
             <h1>
@@ -41,6 +45,7 @@ export default function TaskListView() {
                 <button onClick={handleAddTask}>
                     Create Task
                 </button>
+                
             </div>
             <ul>
                 {tasks.map((task) => (
@@ -64,6 +69,9 @@ export default function TaskListView() {
                         </span>
                     </li>
                 ))}
+                <button onClick={handleDeleteAllTasks}>
+                    Delete All
+                </button>
             </ul>
         </div>
     );
