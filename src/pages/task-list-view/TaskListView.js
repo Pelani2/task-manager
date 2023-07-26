@@ -29,7 +29,35 @@ export default function TaskListView() {
 
     return(
         <div>
-
+            <h1>
+                Task Manager
+            </h1>
+            <div>
+                <input 
+                    type="text"
+                    value={newTaskTitle}
+                    onChange={(e) => setNewTaskTitle(e.target.value)}
+                />
+                <button onClick={handleAddTask}>
+                    Create Task
+                </button>
+            </div>
+            <ul>
+                {tasks.map((task) => (
+                    <li key={task.id}>
+                        <input 
+                            type="checkbox"
+                            checked={task.isComplete}
+                            onChange={() => handleTaskCheckboxChange(task.id)}
+                        />
+                        <span style={{
+                            textDecoration: task.isComplete ? "line-through" : "none"
+                        }}>
+                            {task.title}
+                        </span>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
