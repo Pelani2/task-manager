@@ -4,10 +4,10 @@ export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
     const [newTaskTitle, setNewTaskTitle] = useState("");
 
-    const handleTaskCheckboxChange = (taskId) => {
+    const handleTaskDone = (taskId) => {
         setTasks((prevTasks) => 
             prevTasks.map((task) =>
-                task.id === taskId ? { ...task, isComplete: !task.isComplete } : task
+                task.id === taskId ? { ...task, isComplete: true} : task
             )
         );
     };
@@ -45,13 +45,20 @@ export default function TaskListView() {
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>
-                        <input 
-                            type="checkbox"
-                            checked={task.isComplete}
-                            onChange={() => handleTaskCheckboxChange(task.id)}
-                        />
+                        <button
+                            onClick={() => handleTaskDone(task.id)}
+                            style={{
+                                backgroundColor: task.isComplete ? "green" : "transparent",
+                                border: "1px solid black",
+                                padding: "5px 10px",
+                                borderRadius: "5px",
+                                marginRight: "10px",
+                            }}
+                        >
+                            {task.isComplete ? "✓" : "Done"}
+                        </button>
                         <span style={{
-                            textDecoration: task.isComplete ? "line-through" : "none"
+                            textDecoration: task.isComplete ? "line-through" : "none",
                         }}>
                             {task.title}
                         </span>
