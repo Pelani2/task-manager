@@ -9,12 +9,7 @@ const Done = ({isComplete, onClick, children }) => {
     };
 
     const doneStyles = {
-        backgroundColor: isComplete ? "green" : "transparent",
-        border: "1px solid black",
-        padding: "5px 10px",
-        borderRadius: "5px",
-        marginRight: "10px",
-        cursor: "pointer",
+        backgroundColor: isComplete ? "green" : "#3f51b5",
     };
 
     return(

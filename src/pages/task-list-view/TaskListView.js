@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Done from "../../components/buttons/done/Done";
+import CreateTask from "../../components/buttons/create-task/CreateTask";
 
 export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
@@ -50,9 +51,10 @@ export default function TaskListView() {
                     onChange={(e) => setNewTaskTitle(e.target.value)}
                     onKeyPress={handleKeyPress}
                 />
-                <button onClick={handleAddTask}>
-                    Create Task
-                </button>
+                <CreateTask 
+                    onClickProp={handleAddTask}
+                    textProp="Create Task"
+                />
                 
             </div>
             <ul>
