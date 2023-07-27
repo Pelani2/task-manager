@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Done from "../../components/buttons/done/Done";
 
 export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
@@ -57,18 +58,12 @@ export default function TaskListView() {
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>
-                        <button
+                        <Done 
+                            isComplete={task.isComplete}
                             onClick={() => handleTaskDone(task.id)}
-                            style={{
-                                backgroundColor: task.isComplete ? "green" : "transparent",
-                                border: "1px solid black",
-                                padding: "5px 10px",
-                                borderRadius: "5px",
-                                marginRight: "10px",
-                            }}
                         >
                             {task.isComplete ? "✓" : "Done"}
-                        </button>
+                        </Done>
                         <span style={{
                             textDecoration: task.isComplete ? "line-through" : "none",
                         }}>
