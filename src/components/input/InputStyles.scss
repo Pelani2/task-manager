@@ -5,6 +5,8 @@
     font-size: 1rem;
     width: 100%;
     transition: border-color 0.3s ease;
+    flex-grow: 1;
+    margin-right: 10px;
 
     &:focus {
         outline: none;

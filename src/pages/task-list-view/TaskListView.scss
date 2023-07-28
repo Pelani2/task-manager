@@ -1,0 +1,27 @@
+.task-manager {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.task-manager__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}   
+
+.task-manager__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-manager__list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-manager__task-title {
+    flex-grow: 1;
+    text-decoration: none;
+    color: #333;
+}

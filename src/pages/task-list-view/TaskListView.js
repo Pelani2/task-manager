@@ -4,6 +4,7 @@ import CreateTask from "../../components/buttons/create-task/CreateTask";
 import DeleteAll from "../../components/buttons/delete-all/DeleteAll";
 import Typography from "../../components/typography/Typography";
 import Input from "../../components/input/Input";
+import "./TaskListView.scss";
 
 export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
@@ -43,11 +44,12 @@ export default function TaskListView() {
     };
 
     return(
-        <div>
+        <div className="task-manager">
             <Typography 
                 text="Task Manager"
+                
             />
-            <div>
+            <div className="task-manager__content">
                 <Input 
                     type="text"
                     value={newTaskTitle}
@@ -61,18 +63,24 @@ export default function TaskListView() {
                 />
                 
             </div>
-            <ul>
+            <ul className="task-manager__list">
                 {tasks.map((task) => (
-                    <li key={task.id}>
+                    <li 
+                        key={task.id}
+                        className="task-manager__list-item"
+                    >
                         <Done 
                             isComplete={task.isComplete}
                             onClick={() => handleTaskDone(task.id)}
                         >
                             {task.isComplete ? "✓" : "Done"}
                         </Done>
-                        <span style={{
-                            textDecoration: task.isComplete ? "line-through" : "none",
-                        }}>
+                        <span 
+                            style={{
+                                textDecoration: task.isComplete ? "line-through" : "none",
+                            }}
+                            className="task-manager__task-title"
+                        >
                             {task.title}
                         </span>
                     </li>

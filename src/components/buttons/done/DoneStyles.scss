@@ -1,11 +1,12 @@
 .done-button {
     color: white;
     font-size: 0.9rem;
-    padding: 8px 15px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-right: 10px;
 
     &:hover {
         background-color: #303f9f;
