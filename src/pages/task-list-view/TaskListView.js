@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Done from "../../components/buttons/done/Done";
 import CreateTask from "../../components/buttons/create-task/CreateTask";
 import DeleteAll from "../../components/buttons/delete-all/DeleteAll";
+import Typography from "../../components/typography/Typography";
 
 export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
@@ -42,9 +43,9 @@ export default function TaskListView() {
 
     return(
         <div>
-            <h1>
-                Task Manager
-            </h1>
+            <Typography 
+                text="Task Manager"
+            />
             <div>
                 <input 
                     type="text"
