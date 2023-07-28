@@ -3,6 +3,7 @@ import Done from "../../components/buttons/done/Done";
 import CreateTask from "../../components/buttons/create-task/CreateTask";
 import DeleteAll from "../../components/buttons/delete-all/DeleteAll";
 import Typography from "../../components/typography/Typography";
+import Input from "../../components/input/Input";
 
 export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
@@ -47,12 +48,13 @@ export default function TaskListView() {
                 text="Task Manager"
             />
             <div>
-                <input 
+                <Input 
                     type="text"
                     value={newTaskTitle}
                     onChange={(e) => setNewTaskTitle(e.target.value)}
                     onKeyPress={handleKeyPress}
                 />
+
                 <CreateTask 
                     onClickProp={handleAddTask}
                     textProp="Create Task"
