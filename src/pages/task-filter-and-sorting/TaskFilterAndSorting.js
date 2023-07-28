@@ -23,6 +23,37 @@ export default function TaskFilterAndSorting() {
                     </option>
                 </select>
             </div>
+
+            <div className="sort-section">
+                <label htmlFor="sort-by">
+                    Sort By:
+                </label>
+                <select id="sort-by">
+                    <option value="default">
+                        Default
+                    </option>
+                    <option value="priority">
+                        Priority                
+                    </option>
+                    <option value="due-date">
+                        Due Date
+                    </option>
+                    <option value="title">
+                        Title
+                    </option>
+                </select>
+                <label htmlFor="sort-order">
+                    Order:
+                </label>
+                <select>
+                    <option value="asc">
+                        Ascending
+                    </option>
+                    <option value="desc">
+                        Descending
+                    </option>
+                </select>
+            </div>
         </section>
     );
 }
