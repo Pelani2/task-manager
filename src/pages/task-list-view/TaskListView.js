@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Done from "../../components/buttons/done/Done";
 import CreateTask from "../../components/buttons/create-task/CreateTask";
+import DeleteAll from "../../components/buttons/delete-all/DeleteAll";
 
 export default function TaskListView() {
     const [tasks, setTasks] = useState([]);
@@ -73,9 +74,10 @@ export default function TaskListView() {
                         </span>
                     </li>
                 ))}
-                <button onClick={handleDeleteAllTasks}>
-                    Delete All
-                </button>
+                <DeleteAll 
+                    text="Delete All"
+                    onClick={handleDeleteAllTasks}
+                />
             </ul>
         </div>
     );

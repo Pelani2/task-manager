@@ -26,7 +26,7 @@ const Done = ({isComplete, onClick, children }) => {
 Done.propTypes = {
     isComplete: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired,
-    children: PropTypes.string.isRequired, // Use "string" instead of "node"
+    children: PropTypes.string.isRequired,
   };
 
 export default Done;
